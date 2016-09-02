@@ -17,109 +17,107 @@
 	int endX2 = 150;
 	int endY2 = 0;
 */
+Bolt l1;
+Bolt l2;
+Bolt l3;
+Bolt l4;
+Bolt l5;
+
 void setup()
 {
   size(500,500);
-  strokeWeight(10);
-  background(0);
-  	int startX = 150;
-	Lightning l1 = new Lightning((int)(Math.random)*500),0,150,0);
+  strokeWeight(5);
+	l1 = new Bolt((int)(Math.random()*500),0,150,0);
+	l2 = new Bolt((int)(Math.random()*500),0,150,0);
+	l3 = new Bolt((int)(Math.random()*500),0,150,0);
+	l4 = new Bolt((int)(Math.random()*500),0,150,0);
+	l5 = new Bolt((int)(Math.random()*500),0,150,0);
+	
+	background(0);
 
 }
 void draw()
 {
-// stroke((int)(Math.random()*114), (int)(Math.random()*188), (int)(Math.random()*80),150);
-// while ( endY <= 500){
-// 	endX = startX + (int)(Math.random()*18) - 9;
-// 	endY = startY + (int)(Math.random()*9);
 
-// 	line(startX,startY,endX,endY);
-
-// 	startX = endX;
-// 	startY = endY;
-// 	}
-
-// stroke((int)(Math.random()*255), (int)(Math.random()*195), (int)(Math.random()*0),80);
-// while ( endY1 <= 500){
-// 	endX1 = startX1 + (int)(Math.random()*18) - 9;
-// 	endY1 = startY1 + (int)(Math.random()*9);
-
-// 	line(startX1,startY1,endX1,endY1);
-
-// 	startX1 = endX1;
-// 	startY1 = endY1;
-// 	}
-
-// stroke((int)(Math.random()*199), (int)(Math.random()*0), (int)(Math.random()*57),80);
-// while ( endY <= 500){
-// 	endX = startX + (int)(Math.random()*18) - 9;
-// 	endY = startY + (int)(Math.random()*9);
-
-// 	line(startX,startY,endX,endY);
-
-// 	startX = endX;
-// 	startY = endY;
-	// }
 
 l1.show();
+l2.show();
+l3.show();
+l4.show();
+l5.show();
 
-//scared person
-// noStroke();
-// fill(217,215,72); //body
-// quad(175, 350, 150, 500, 350, 500, 325, 350);
-// fill(218,247,166); //head
-// ellipse(250, 350, 150, 150);
-// fill(255); //white part of the eye
-// ellipse(230,350,50,50);
-// ellipse(275,350,50,50);
-// fill(160,220,222); //irises
-// ellipse(230,350,35,35);
-// ellipse(275,350,35,35);
-// fill(238,128,99); //nose
-// ellipse(250,375,40,40);
-// noFill();
-// stroke(110,171,92); //eyebrow
-// strokeWeight(5);
-// arc(230, 310, 20, 15, PI, 2*PI);
-}
+		//scared person
+	noStroke();
+	fill(217,215,72); //body
+	quad(175, 350, 150, 500, 350, 500, 325, 350);
+	fill(218,247,166); //head
+	ellipse(250, 350, 150, 150);
+	fill(255); //white part of the eye
+	ellipse(230,350,50,50);
+	ellipse(275,350,50,50);
+	fill(160,220,222); //irises
+	ellipse(230,350,10,10);
+	ellipse(275,350,10,10);
+	fill(238,128,99); //nose
+	ellipse(250,375,40,40);
+	noFill();
+	stroke(110,171,92); //eyebrow
+	strokeWeight(5);
+	arc(230, 310, 15, 20, PI, 2*PI);
+	arc(270, 310, 15, 20, PI, 2*PI);
+	noStroke();
+	fill(110,171,92); //mouth
+	ellipse(250,400, 20,20);
+	}
 void mouseDragged()
 {
-// startX = (int)(Math.random() * 500);
-// startY = 0;
-// endX = 150;
-// endY = 0;
-
-// startX1 = (int)(Math.random() * 500);
-// startY1 = 0;
-// endX1 = 150;
-// endY1 = 0;
-
-// startX2 = (int)(Math.random() * 500);
-// startY2 = 0;
-// endX2 = 150;
-// endY2 = 0;
 
 l1.drag();
-
+l2.drag();
+l3.drag();
+l4.drag();
+l5.drag();
 background(0);
+
+	//happy person
+	noStroke();
+	fill(217,215,72); //body
+	quad(175, 350, 150, 500, 350, 500, 325, 350);
+	fill(218,247,166); //head
+	ellipse(250, 350, 150, 150);
+	fill(255); //white part of the eye
+	ellipse(230,350,50,50);
+	ellipse(275,350,50,50);
+	fill(160,220,222); //irises
+	ellipse(230,350,35,35);
+	ellipse(275,350,35,35);
+	fill(238,128,99); //nose
+	ellipse(250,375,40,40);
+	noFill();
+	stroke(110,171,92); //eyebrow
+	strokeWeight(5);
+	arc(230, 310, 15, 15, PI, 2*PI);
+	arc(270, 310, 15, 15, PI, 2*PI);
+	arc(250,400,20,20,0, PI); //mouth
+
 }
 
-class Lightning
+class Bolt
 
 {
 	int startA, startB, endA, endB;
 
-	Lightning(int x1, int y1, int x2, int y2)
+	Bolt(int x1, int y1, int x2, int y2)
 	{
 		startA = x1;
-		startB = y1
+		startB = y1;
 		endA = x2;
 		endB = y2;
 	}
 
 	void show()
 	{
-	stroke((int)(Math.random()*114), (int)(Math.random()*188), (int)(Math.random()*80),150);
+	stroke((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255),200);
 
 	while ( endB <= 500){
 		endA = startA + (int)(Math.random()*18) - 9;
@@ -130,6 +128,7 @@ class Lightning
 		startA = endA;
 		startB = endB;
 	}
+	}	
 
 	void drag()
 	{
